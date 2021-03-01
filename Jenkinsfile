@@ -30,19 +30,20 @@ pipeline{
                     cd build
                     cmake .. -DCMAKE_PREFIX_PATH=../install
                     make
-                    ./app-sample-addition-test
+                    ./app-sample-addition-test --gtest_output="xml:report.xml"
+
                  '''
+                
               }
        }
 
      }
      post {
         always {
+            junit checksName: 'Testss', testResults: 'test/build/report.xml'
             archiveArtifacts artifacts: 'test/build/app-sample-addition-test', fingerprint: true
-            
+        
         }
+
     }
   }
-
-
-
