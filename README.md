@@ -58,7 +58,7 @@ To run the tests,run the following commands
 ```
 
 
-
+The sample code is a modified version of:  https://github.com/karna408/jenkins-cmake-gtest-project
 
 
 
