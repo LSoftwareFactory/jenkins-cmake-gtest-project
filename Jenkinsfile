@@ -38,7 +38,7 @@ pipeline{
         /*    ----------------- Coverage Test Stage ------------------- */
         stage('Coverage Test'){
             steps{
-                    echo "nothing to do for coverage test yet..."
+                    /* do something */
 
               }
        }
