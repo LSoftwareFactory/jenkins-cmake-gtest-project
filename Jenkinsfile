@@ -20,12 +20,12 @@ pipeline{
                   '''
              }
         }
-        /*    ----------------- Test Stage ------------------- */
-        stage('Test'){
+        /*    ----------------- Unit Test Stage ------------------- */
+        stage('Unit Test'){
             steps{
                  sh '''
                     cd $WORKSPACE/test
-                    
+                    echo "Running Coverage Tests" 
                     mkdir build
                     cd build
                     cmake .. -DCMAKE_PREFIX_PATH=../install
@@ -36,6 +36,16 @@ pipeline{
                 
               }
        }
+        /*    ----------------- Coverage Test Stage ------------------- */
+        stage('Coverage Test'){
+            steps{
+                 sh '''
+                    echo "Running Coverage Tests" 
+                 '''
+                
+              }
+       }
+  
 
      }
      post {
