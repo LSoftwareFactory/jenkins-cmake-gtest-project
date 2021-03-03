@@ -1,5 +1,9 @@
 pipeline{
     agent any
+    
+    environment {
+        LOG_JUNIT_RESULTS = 'true'
+    }
  
     /*-------- CODE CLONE ------------ */
     stages{
@@ -50,7 +54,7 @@ pipeline{
      }
      post {
         always {
-            junit checksName: 'Testss', testResults: 'test/build/report.xml'
+            junit checksName: 'Tests', testResults: 'test/build/report.xml'
             archiveArtifacts artifacts: 'test/build/app-sample-addition-test', fingerprint: true
         
         }
