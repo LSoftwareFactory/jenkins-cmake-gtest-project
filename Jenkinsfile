@@ -38,7 +38,10 @@ pipeline{
         /*    ----------------- Coverage Test Stage ------------------- */
         stage('Coverage Test'){
             steps{
-                    /* do something */
+                  sh '''
+                    cd $WORKSPACE/test
+                 '''
+                
 
               }
        }
