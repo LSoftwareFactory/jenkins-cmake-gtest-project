@@ -55,7 +55,7 @@ pipeline{
      }
      post {
         always {
-            junit checksName: 'Tests', testResults: 'test/build/report.xml'
+            junit checksName: 'Tests', testResults: 'test/build/*.xml'
             influxDbPublisher(selectedTarget: 'junit-test-data')
 
             archiveArtifacts artifacts: 'test/build/app-sample-addition-test', fingerprint: true
