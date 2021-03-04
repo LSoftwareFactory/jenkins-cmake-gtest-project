@@ -28,15 +28,15 @@ pipeline{
         /*    ----------------- Unit Test Stage ------------------- */
         stage('Unit Test'){
             steps{
-                 sh '''
+                 sh """
                     cd $WORKSPACE/test
                     mkdir build
                     cd build
                     cmake .. -DCMAKE_PREFIX_PATH=../install
                     make
-                    ./app-sample-addition-test --gtest_output="xml:TestReport-Build-${currentBuild.number}.xml"
+                    ./app-sample-addition-test --gtest_output="xml:TestReport-Build${currentBuild.number}.xml"
 
-                 '''
+                 """
                 
               }
        }
