@@ -18,6 +18,7 @@ pipeline{
         /*--------------------------- Build Stage ----------------------- */
         stage('Build'){
             steps{
+                echo "Build number is ${currentBuild.number}"
                 sh '''
                   cd $WORKSPACE
                   sh build.sh
